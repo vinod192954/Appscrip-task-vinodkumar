@@ -17,7 +17,6 @@ class AllProducts extends Component {
 
   getAllProducts = async () => {
     const { selectedCategory } = this.props;
-
     let url = "https://fakestoreapi.com/products";
     if (selectedCategory) {
       url = `https://fakestoreapi.com/products/category/${selectedCategory}`;

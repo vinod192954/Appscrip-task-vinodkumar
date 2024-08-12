@@ -1,8 +1,8 @@
 import {ListItem,ProductImage,ProductTitle,ProductPrice,ProductRating, ProductDescriptionContainer} from "./styledComponents"
 const ProductItem =(props)=>{
     const {product} = props
-    const {category,description,id,image,price,rating,title} = product
-    const {rate,count} = rating
+    const {image,price,rating,title} = product
+    const {rate} = rating
     return (
         <ListItem>
             <ProductImage src={image}/>
