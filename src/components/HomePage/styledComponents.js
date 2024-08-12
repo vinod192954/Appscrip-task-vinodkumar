@@ -86,5 +86,11 @@ export const Option = styled.option`
 `;
 
 export const ProductsAndFilters = styled.div`
+box-sizing:border-box;
 display:flex;
+width:100%;
+`
+export const ShowHideFilterButton = styled.button`
+background-color:transparent;
+border-width:0px;
 `
