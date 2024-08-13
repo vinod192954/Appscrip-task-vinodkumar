@@ -1,4 +1,5 @@
 import {Component} from 'react'
+import {Redirect} from "react-router-dom"
 import Cookies from "js-cookie"
 import './index.css'
 class LoginPage extends Component{
@@ -43,6 +44,10 @@ class LoginPage extends Component{
 
     render(){
         const {username,password} = this.state
+        const jwtToken = Cookies.get("jwt_token")
+        if (jwtToken!==undefined){
+            return <Redirect to="/Home" />
+        }
         return(
             <div className='main-container' >
                   <form className='login-container' onSubmit={this.onSubmitUserDetails}>
@@ -65,9 +70,9 @@ class LoginPage extends Component{
                     </div>
                 </form>
                 
-               
             </div>
         )
+    
     }
 }
 export default LoginPage

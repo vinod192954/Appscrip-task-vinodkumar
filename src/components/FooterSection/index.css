@@ -1,0 +1,138 @@
+.footer-section{
+    width: 1440px;
+    height: 750px;
+    background-color: #000000;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin: 0px;
+}
+.footer-upper-section{
+    display: flex;
+    justify-content: space-around;
+}
+.footer-upper-section h1 {
+    color: #ffffff;
+    font-family: Simplon Norm;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: left;
+}
+
+.footer-section p {
+    color: #ffffff;
+    font-family: Simplon Norm;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    text-align: left;
+
+}
+.input-container input{
+    width: Fixed (384px)px;
+    height: Fixed (47px)px;
+    padding: 14px 24px 14px 24px;
+    gap: 8px;
+    opacity: 0px;
+
+}
+
+.input-container button{
+    background-color: #000000;
+    width: 184px;
+    height: 48px;
+    left: 400px;
+    border:solid 1px #928e8e;
+    color: #fff;
+    gap: 0px;
+    margin-left: 3px;
+    border-radius: 5px 5px 5px 0px;
+    border: 1.14px 1.14px 1.14px 1.14px;
+    opacity: 0.3px;
+
+}
+.contact-us h1{
+    font-size: 20px;
+}
+.dollar-image{
+    border-radius: 18px;
+    border-width: 0px;
+}
+.currecy-container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.transaction-quote{
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.4px;
+    text-align: left;
+
+}
+.horizontal-divider{
+    width: 90%;
+}
+.footer-bottom-section{
+    display: flex;
+    justify-content: space-around;
+}
+.footer-bottom-section h1{
+    color: #fff;
+    margin-left: 30px;
+}
+.list-items{
+    color: #fff;
+    list-style-type: none;
+    gap: 10px;
+}
+.list-items li{
+    margin: 10px;
+}
+.quick-links h1{
+    color: #fff;
+    font-family: Simplon Norm;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: left;
+
+}
+
+.social-icons{
+    display: flex;
+    flex-direction: column;
+    
+}
+.icons{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 30px;
+}
+.social-icons h1{
+    color: #fff;
+    font-family: Simplon Norm;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+}
+.payments{
+    list-style-type: none;
+    display: flex;
+}
+.payments li{
+    margin: 5px;
+}
+.payments li img {
+    border-radius: 5px;
+}
+.text{
+    margin-left: 30px;
+}
+.copyrights{
+    align-self: center;
+    margin-top: 35px;
+}

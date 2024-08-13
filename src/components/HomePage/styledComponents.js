@@ -3,7 +3,7 @@ import styled  from "styled-components";
 export const MainContainer = styled.div`
 box-sizing:border-box;
 width:100%;
-height:auto;
+height:750vh
 `
 
 export const TextContainer = styled.div`
@@ -88,6 +88,7 @@ export const Option = styled.option`
 export const ProductsAndFilters = styled.div`
 box-sizing:border-box;
 display:flex;
+height:auto;
 width:100%;
 `
 export const ShowHideFilterButton = styled.button`

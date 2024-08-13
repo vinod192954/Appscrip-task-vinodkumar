@@ -1,5 +1,8 @@
 import { Component } from "react";
+import { Redirect } from "react-router-dom"
+import Cookies from "js-cookie"
 import Header from '../Header';
+import Footer from "../FooterSection";
 import FiltersSection from '../FiltersSection';
 import AllProducts from '../AllProducts';
 import {
@@ -39,6 +42,11 @@ class HomePage extends Component {
   render() {
     const { selectedCategory,showFilter,sortOption } = this.state;
     const showFilterText = showFilter ? "HIDE FILTERS" : "SHOW FILTERS"
+    const jwtToken = Cookies.get("jwt_token")
+    console.log(jwtToken)
+    if (jwtToken===undefined){
+       return <Redirect to="/" />
+    }
     return (
       <>
         <Header />
@@ -73,6 +81,7 @@ class HomePage extends Component {
             <AllProducts sortOption={sortOption} selectedCategory={selectedCategory} />
           </ProductsAndFilters>
         </MainContainer>
+        <Footer/>
       </>
     );
   }

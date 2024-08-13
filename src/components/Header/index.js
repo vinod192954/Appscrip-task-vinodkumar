@@ -35,12 +35,13 @@ const Header =(props)=>{
                 <GoHeart/>
                 <HiOutlineShoppingBag/>
                 <CiUser/>
-                <TbLogout />
+                <button className='button-click' onClick={onClickToLogout} type='button'>
+                        <TbLogout />
+                    </button>
+               
                 <div className='icons'>
                     <span>ENG</span>
-                    <button className='button-click' onClick={onClickToLogout} type='button'>
                     <IoIosArrowDown/>
-                    </button>
                 </div>
             </IconsContainer>
             </HeaderSection>
