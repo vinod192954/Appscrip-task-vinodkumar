@@ -21,7 +21,7 @@ import {
 import { IoIosArrowBack } from "react-icons/io";
 
 class HomePage extends Component {
-  state = { selectedCategory: "" ,showFilter:true};
+  state = { selectedCategory: "" ,showFilter:true,isLoader:false,sortOption:"asc"};
 
   handleCategoryChange = (category) => {
     this.setState({ selectedCategory: category });
@@ -31,8 +31,13 @@ class HomePage extends Component {
     this.setState((prevState)=>({showFilter:!prevState.showFilter}))
   }
 
+  onChangeOptions=(event)=>{
+    this.setState({sortOption:event.target.value})
+  }
+
+
   render() {
-    const { selectedCategory,showFilter } = this.state;
+    const { selectedCategory,showFilter,sortOption } = this.state;
     const showFilterText = showFilter ? "HIDE FILTERS" : "SHOW FILTERS"
     return (
       <>
@@ -53,12 +58,9 @@ class HomePage extends Component {
               </ShowHideFilterButton>
             </ShowHideFilter>
             <SelectContainer>
-              <Select>
-                <Option  value="recommended">RECOMMENDED</Option>
-                <Option value="newest">NEWEST FIRST</Option>
-                <Option value="popular">POPULAR</Option>
-                <Option value="high-to-low">PRICE: HIGH TO LOW</Option>
-                <Option value="low-to-high">PRICE: LOW TO HIGH</Option>
+              <Select onChange={this.onChangeOptions}>
+                <Option value="desc">PRICE: HIGH TO LOW</Option>
+                <Option value="asc">PRICE: LOW TO HIGH</Option>
               </Select>
             </SelectContainer>
           </ShowHiddenFilterContainer>
@@ -68,7 +70,7 @@ class HomePage extends Component {
               selectedCategory={selectedCategory}
               onCategoryChange={this.handleCategoryChange}
             />) : ""}
-            <AllProducts selectedCategory={selectedCategory} />
+            <AllProducts sortOption={sortOption} selectedCategory={selectedCategory} />
           </ProductsAndFilters>
         </MainContainer>
       </>

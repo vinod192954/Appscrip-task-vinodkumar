@@ -49,7 +49,7 @@ export const LogoText = styled.h1`
 `
 
 export const IconsContainer = styled.div`
-  width: 244px;
+  width: 267px;
   height: 24px;
   display: flex;
   gap: 28px;

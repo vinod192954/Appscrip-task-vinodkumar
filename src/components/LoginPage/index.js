@@ -1,8 +1,8 @@
-import {Component} from 'react' 
+import {Component} from 'react'
 import Cookies from "js-cookie"
-
+import './index.css'
 class LoginPage extends Component{
-    state = {username:'',password:''} 
+    state = {username:'',password:'',isLoading:false} 
 
 
     onChangeUsername=(event)=>{
@@ -19,8 +19,9 @@ class LoginPage extends Component{
     }
      
     onSubmitUserDetails=async(event)=>{
-        const {username,password} = this.state
         event.preventDefault() 
+        this.setState({isLoading:true})
+        const {username,password} = this.state
         const url ='https://fakestoreapi.com/auth/login' 
         const userDetails = {username,password} 
         const options = {
@@ -35,28 +36,36 @@ class LoginPage extends Component{
         const {token}  = data 
         if (response.ok===true){
             this.getRouteToHome(token)
+            this.setState({isLoading:false})
+            
         }
     }
 
     render(){
+        const {username,password} = this.state
         return(
-            <div>
-                <form onSubmit={this.onSubmitUserDetails}>
-                    <div>
+            <div className='main-container' >
+                  <form className='login-container' onSubmit={this.onSubmitUserDetails}>
+                    <div className='username-container'>
                         <label>Username</label>
-                        <input type="text" 
+                        <br/>
+                        <input type="text" value={username}
                         onChange={this.onChangeUsername} placeholder='Enter Username'/>
                     </div>
-                    <div>
+                    <div className='password-container'>
                         <label>Password</label>
+                        <br/>
                         <input type="password"
+                        value={password}
                         onChange={this.onChangePassword}
                          placeholder='Enter Password'/>
                     </div>
-                    <div>
+                    <div className='button-container'>
                         <button type="submit">Login</button>
                     </div>
                 </form>
+                
+               
             </div>
         )
     }

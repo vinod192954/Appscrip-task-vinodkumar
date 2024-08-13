@@ -1,0 +1,43 @@
+.login-container{
+    border: solid 1px #b8b2b2;
+    height: 250px;
+    width: 200px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.username-container{
+    margin: 10px;
+}
+.username-container input{
+    padding: 5px;
+    margin-top: 5px;
+}
+.password-container input{
+    padding: 5px;
+    margin-top: 5px;
+}
+.password-container{
+    margin: 10px;
+}
+.button-container{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+.button-container button{
+    background-color: blue;
+    padding: 10px;
+    border-width: 0px;
+    color: #fff;
+    width: 120px;
+    border-radius: 5px;
+}

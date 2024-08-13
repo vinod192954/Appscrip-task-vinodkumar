@@ -1,0 +1,9 @@
+.icons{
+    display: flex;
+    
+}
+.button-click{
+    background-color: transparent;
+    border-width: 0px;
+    cursor: pointer;
+}

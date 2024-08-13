@@ -6,12 +6,23 @@ HeaderSection,
 TabsList,
 TabsContainer,
 IconsContainer} from './styledComponents'
+import Cookies from 'js-cookie'
+import { withRouter } from 'react-router-dom'
+import "./index.css"
+import { TbLogout } from "react-icons/tb";
 import { GoSearch } from "react-icons/go";
 import { GoHeart } from "react-icons/go";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { CiUser } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
-const Header =()=>{
+const Header =(props)=>{
+
+   const onClickToLogout=()=>{
+        Cookies.remove("jwt_token")
+        const {history} = props 
+        history.replace("/")
+    }
+
     return (
         <MainContainer>
             <HeaderSection>
@@ -24,7 +35,13 @@ const Header =()=>{
                 <GoHeart/>
                 <HiOutlineShoppingBag/>
                 <CiUser/>
-            <span>ENG <IoIosArrowDown /></span>
+                <TbLogout />
+                <div className='icons'>
+                    <span>ENG</span>
+                    <button className='button-click' onClick={onClickToLogout} type='button'>
+                    <IoIosArrowDown/>
+                    </button>
+                </div>
             </IconsContainer>
             </HeaderSection>
         <TabsContainer>
@@ -39,4 +56,4 @@ const Header =()=>{
         </MainContainer>
     )
 }
-export default Header
+export default withRouter(Header)
