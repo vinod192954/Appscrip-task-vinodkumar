@@ -32,7 +32,7 @@ const Header =(props)=>{
             <LogoText>Logo</LogoText>
             <IconsContainer>
                 <GoSearch />
-                <GoHeart/>
+                <GoHeart />
                 <HiOutlineShoppingBag/>
                 <CiUser/>
                 <button className='button-click' onClick={onClickToLogout} type='button'>
